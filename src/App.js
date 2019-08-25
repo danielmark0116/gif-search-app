@@ -50,7 +50,6 @@ const MyApp = React.createClass({
     return (
       <main>
         <Background />
-        <Loading></Loading>
         <Header />
         <Form onSearch={this.handleSearch} />
         <div className="container flex">

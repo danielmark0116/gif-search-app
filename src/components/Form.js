@@ -36,6 +36,7 @@ Form = React.createClass({
             <div className="input">
               <input
                 type="text"
+                autoComplete="off"
                 name="searchField"
                 value={this.state.searchField}
                 placeholder="Search for your fav GIF"

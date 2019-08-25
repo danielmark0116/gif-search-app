@@ -1,9 +1,13 @@
 .loading-spinner {
   display: block;
   margin: 0 auto;
+  margin-top: 50px;
   width: 100%;
   max-width: 200px;
-  display: none;
+  text-align: center;
+  color: white;
+  font-weight: $bold;
+  font-size: 38px;
 
   circle {
     fill: transparent;

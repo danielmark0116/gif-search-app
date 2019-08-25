@@ -269,9 +269,13 @@ body {
 .loading-spinner {
   display: block;
   margin: 0 auto;
+  margin-top: 50px;
   width: 100%;
   max-width: 200px;
-  display: none; }
+  text-align: center;
+  color: white;
+  font-weight: 700;
+  font-size: 38px; }
   .loading-spinner circle {
     fill: transparent;
     stroke: #2f3d4c;
