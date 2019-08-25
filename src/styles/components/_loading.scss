@@ -1,0 +1,13 @@
+.loading-spinner {
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 200px;
+  display: none;
+
+  circle {
+    fill: transparent;
+    stroke: #2f3d4c;
+    stroke-width: 10;
+  }
+}

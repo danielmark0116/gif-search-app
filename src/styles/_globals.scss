@@ -1,0 +1,39 @@
+body {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: 'Open Sans', sans-serif;
+  background: $dark;
+  width: 100vw;
+  min-height: 100vh;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  position: relative;
+  z-index: 4;
+
+  &::after {
+    position: fixed;
+    top: 0;
+    left: 0;
+    content: '';
+    width: 100vw;
+    height: 100vh;
+    background: $green;
+    transform: scale(0.01) rotate(0);
+    animation: bg-scale 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+    z-index: -4;
+  }
+}
+
+.container {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 900px;
+  display: block;
+  z-index: 10;
+
+  &.flex {
+    display: flex;
+    justify-content: center;
+  }
+}

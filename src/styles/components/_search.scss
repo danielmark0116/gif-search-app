@@ -1,0 +1,53 @@
+.app-form {
+  width: auto;
+  max-width: 100%;
+  margin: 0 20px;
+  margin-top: 50px;
+  border: 4px solid $green-secondary;
+  box-shadow: 0 0 50px rgba($dark, 0.1);
+
+  animation: showUp 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+  animation-delay: 1.3s;
+  opacity: 0;
+
+  .input-group {
+    width: auto;
+    margin: 20px;
+    position: relative;
+    background: white;
+    border: 1px solid rgba($green, 0.4);
+    box-shadow: 0 0 50px rgba($dark, 0.1);
+
+    .input-icon {
+      padding: 0;
+      margin: 0;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      left: 20px;
+      display: flex;
+      justify-content: center;
+      color: red;
+      align-items: center;
+    }
+
+    .input {
+      margin-left: 60px;
+
+      input {
+        width: 100%;
+        margin: 0;
+        padding: 15px 0;
+        border: none;
+        background: transparent;
+        font-weight: $light;
+        font-size: 16px;
+
+        &:active,
+        &:focus {
+          outline: none;
+        }
+      }
+    }
+  }
+}

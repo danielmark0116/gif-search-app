@@ -1,0 +1,30 @@
+{
+  "name": "gif-search-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "sass": "node-sass -w -r src/styles/style.scss -o style",
+    "server": "browser-sync start --server --files *",
+    "dev": "concurrently \"npm run sass\" \"npm run server\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/danielmark0116/gif-search-app.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/danielmark0116/gif-search-app/issues"
+  },
+  "homepage": "https://github.com/danielmark0116/gif-search-app#readme",
+  "devDependencies": {
+    "concurrently": "^4.1.2",
+    "node-sass": "^4.12.0"
+  },
+  "dependencies": {
+    "babel-standalone": "^6.26.0",
+    "browser-sync": "^2.26.7"
+  }
+}
