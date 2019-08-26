@@ -1,0 +1,12 @@
+.error-msg {
+  font-size: 28px;
+  color: $pink;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: $bold;
+}
+
+.error-sub {
+  @extend .error-msg;
+  font-size: 14px;
+}

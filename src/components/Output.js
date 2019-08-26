@@ -1,7 +1,8 @@
 Output = React.createClass({
   render: function() {
+    if (this.props.error) return <ErrorHandler />;
     if (this.props.loading) return <Loading />;
-    if (this.props.gifData === null) return null;
+    if (this.props.gifData.url === null) return null;
     return (
       <div className="gif-outcome">
         <div className="gif-item">

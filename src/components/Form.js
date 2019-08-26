@@ -12,9 +12,7 @@ Form = React.createClass({
 
     let searchField = this.state.searchField;
 
-    if (searchField.length > 2) {
-      this.props.onSearch(searchField);
-    }
+    this.props.onSearch(searchField);
   },
 
   handleKeyUp: function(event) {

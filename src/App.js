@@ -5,34 +5,72 @@ const MyApp = React.createClass({
   getInitialState: function() {
     return {
       loading: false,
-      gifData: null
+      gifData: {
+        url: null,
+        srcUrl: null,
+        fetchError: false,
+        errorMsg: null
+      }
     };
   },
 
-  fetchGif: function(inputValue, callback) {
-    var url = giphyUrl + giphyKey + '&tag=' + inputValue;
+  fetchGif: (inputValue, callback) => {
+    const url = giphyUrl + giphyKey + '&tag=' + inputValue;
+
     fetch(url)
       .then(res => res.json())
       .then(res => {
         let gifObject = {
           url: res.data.fixed_width_downsampled_url,
-          srcUrl: res.data.url
+          srcUrl: res.data.url,
+          fetchError: false,
+          errorMsg: null
         };
+
+        callback(gifObject);
+      })
+      .catch(err => {
+        let gifObject = {
+          url: null,
+          srcUrl: null,
+          fetchError: true,
+          errorMsg: err
+        };
+
         callback(gifObject);
       });
   },
 
   handleSearch: function(inputValue) {
+    if (inputValue.length < 3) {
+      this.setState({
+        loading: false,
+        gifData: {
+          url: null,
+          srcUrl: null,
+          fetchError: false,
+          errorMsg: null
+        }
+      });
+      return null;
+    }
     this.setState({
       loading: true
     });
     this.fetchGif(
       inputValue,
       function(data) {
-        this.setState({
-          gifData: data,
-          loading: false
-        });
+        if (data.fetchError) {
+          this.setState({
+            gifData: data,
+            loading: false
+          });
+        } else {
+          this.setState({
+            gifData: data,
+            loading: false
+          });
+        }
       }.bind(this)
     );
   },
@@ -44,7 +82,11 @@ const MyApp = React.createClass({
         <Header />
         <Form onSearch={this.handleSearch} />
         <div className="container flex">
-          <Output loading={this.state.loading} gifData={this.state.gifData} />
+          <Output
+            error={this.state.gifData.fetchError}
+            loading={this.state.loading}
+            gifData={this.state.gifData}
+          />
         </div>
         <Footer />
       </main>

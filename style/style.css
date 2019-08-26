@@ -355,3 +355,13 @@ footer {
       transform: rotate(360deg) scale(1.1); }
     footer .logo img {
       height: 100%; }
+
+.error-msg, .error-sub {
+  font-size: 28px;
+  color: #ff3f98;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 700; }
+
+.error-sub {
+  font-size: 14px; }
