@@ -1,4 +1,4 @@
-const giphyUrl = 'http://www.api.giphy.com/v1/gifs/random?api_key=';
+const giphyUrl = 'https://api.giphy.com/v1/gifs/random?api_key=';
 const giphyKey = 'Zrmd1zRa5KOTGx8EeGP50dxBQrVeIX0Z';
 
 const MyApp = React.createClass({
@@ -10,11 +10,7 @@ const MyApp = React.createClass({
   },
 
   fetchGif: function(inputValue, callback) {
-    var url =
-      'http://api.giphy.com/v1/gifs/random?api_key=' +
-      giphyKey +
-      '&tag=' +
-      inputValue;
+    var url = giphyUrl + giphyKey + '&tag=' + inputValue;
     fetch(url)
       .then(res => res.json())
       .then(res => {
