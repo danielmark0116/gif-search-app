@@ -29,7 +29,6 @@ const MyApp = React.createClass({
     this.fetchGif(
       inputValue,
       function(data) {
-        console.log(data);
         this.setState({
           gifData: data,
           loading: false
