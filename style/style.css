@@ -10,12 +10,13 @@
 
 body {
   box-sizing: border-box;
-  padding: 0;
-  margin: 0;
   font-family: 'Open Sans', sans-serif;
   background: #010a43;
   width: 100vw;
   min-height: 100vh;
+  padding: 0;
+  margin: 0;
+  padding-bottom: 100px;
   overflow-x: hidden;
   overflow-y: scroll;
   position: relative;
@@ -109,6 +110,7 @@ body {
   padding: 20px;
   border: 3px solid #b7e778;
   box-shadow: 0 0 80px rgba(1, 10, 67, 0.2);
+  -webkit-box-shadow: 0 0 80px rgba(1, 10, 67, 0.2);
   transition: 0.2s ease-in; }
   .gif-outcome:hover {
     transform: scale(1.01); }
@@ -117,7 +119,6 @@ body {
   .gif-outcome .gif-item {
     display: block;
     margin: 0 auto;
-    box-shadow: 0 0 80px rgba(1, 10, 67, 0.3);
     width: max-content;
     border-radius: 5px;
     overflow: hidden;
@@ -151,10 +152,12 @@ body {
   z-index: -2; }
 
 [class*='top'] {
-  clip-path: polygon(100% 0, 0 0, 0 100%); }
+  clip-path: polygon(100% 0, 0 0, 0 100%);
+  -webkit-clip-path: polygon(100% 0, 0 0, 0 100%); }
 
 [class*='bottom'] {
-  clip-path: polygon(100% 0, 100% 100%, 0% 100%); }
+  clip-path: polygon(100% 0, 100% 100%, 0% 100%);
+  -webkit-clip-path: polygon(100% 0, 100% 100%, 0% 100%); }
 
 .bg-top-dark {
   top: -20px;
@@ -187,6 +190,33 @@ body {
   transform: rotate(90deg);
   animation: bottom-pink-in 0.8s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
   animation-delay: 0; }
+
+footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  footer p {
+    color: #ffffff;
+    margin: 0 15px; }
+  footer .logo {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 2px solid #64e291;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    transition: 0.2s ease-in; }
+    footer .logo:hover {
+      transform: rotate(360deg) scale(1.1); }
+    footer .logo img {
+      height: 100%; }
 
 .header {
   padding-top: 100px;
@@ -280,3 +310,30 @@ body {
     fill: transparent;
     stroke: #2f3d4c;
     stroke-width: 10; }
+
+footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  footer p {
+    color: #ffffff;
+    margin: 0 15px; }
+  footer .logo {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 2px solid #64e291;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    transition: 0.2s ease-in; }
+    footer .logo:hover {
+      transform: rotate(360deg) scale(1.1); }
+    footer .logo img {
+      height: 100%; }

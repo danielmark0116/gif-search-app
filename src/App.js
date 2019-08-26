@@ -55,6 +55,7 @@ const MyApp = React.createClass({
         <div className="container flex">
           <Output loading={this.state.loading} gifData={this.state.gifData} />
         </div>
+        <Footer />
       </main>
     );
   }

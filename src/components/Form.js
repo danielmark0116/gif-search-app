@@ -39,7 +39,7 @@ Form = React.createClass({
                 autoComplete="off"
                 name="searchField"
                 value={this.state.searchField}
-                placeholder="Search for your fav GIF"
+                placeholder="Search for your fav GIF and press ENTER to reload"
                 onChange={this.handleChange}
                 onKeyUp={this.handleKeyUp}
               />

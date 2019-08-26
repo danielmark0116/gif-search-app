@@ -1,0 +1,35 @@
+footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  p {
+    color: $white;
+    margin: 0 15px;
+  }
+
+  .logo {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 2px solid $green;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    transition: 0.2s ease-in;
+
+    &:hover {
+      transform: rotate(360deg) scale(1.1);
+    }
+
+    img {
+      height: 100%;
+    }
+  }
+}

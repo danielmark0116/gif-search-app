@@ -27,10 +27,12 @@ $length: 0.8s;
 
 [class*='top'] {
   clip-path: polygon(100% 0, 0 0, 0 100%);
+  -webkit-clip-path: polygon(100% 0, 0 0, 0 100%);
 }
 
 [class*='bottom'] {
   clip-path: polygon(100% 0, 100% 100%, 0% 100%);
+  -webkit-clip-path: polygon(100% 0, 100% 100%, 0% 100%);
 }
 
 .bg {
