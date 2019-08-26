@@ -199,7 +199,10 @@ footer {
   height: 100px;
   display: flex;
   justify-content: center;
-  align-items: center; }
+  align-items: center;
+  animation: showUp 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+  opacity: 0;
+  animation-delay: 1.7s; }
   footer p {
     color: #ffffff;
     margin: 0 15px; }
@@ -306,10 +309,22 @@ footer {
   color: white;
   font-weight: 700;
   font-size: 38px; }
+  .loading-spinner svg {
+    width: 50px;
+    margin: 0 5px; }
   .loading-spinner circle {
     fill: transparent;
-    stroke: #2f3d4c;
-    stroke-width: 10; }
+    stroke: #ffffff;
+    stroke-width: 10;
+    stroke-dasharray: 20;
+    stroke-dashoffset: 100;
+    animation: loader 1s ease-in alternate-reverse;
+    animation-iteration-count: infinite; }
+
+@keyframes loader {
+  to {
+    stroke-dasharray: 50;
+    stroke-dashoffset: 0; } }
 
 footer {
   position: absolute;
@@ -319,7 +334,10 @@ footer {
   height: 100px;
   display: flex;
   justify-content: center;
-  align-items: center; }
+  align-items: center;
+  animation: showUp 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+  opacity: 0;
+  animation-delay: 1.7s; }
   footer p {
     color: #ffffff;
     margin: 0 15px; }

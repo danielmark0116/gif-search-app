@@ -1,5 +1,11 @@
 Loading = React.createClass({
   render: function() {
-    return <div className="loading-spinner">LOADING</div>;
+    return (
+      <div className="loading-spinner">
+        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="50" cy="50" r="45" />
+        </svg>
+      </div>
+    );
   }
 });

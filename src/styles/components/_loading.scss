@@ -9,9 +9,25 @@
   font-weight: $bold;
   font-size: 38px;
 
+  svg {
+    width: 50px;
+    margin: 0 5px;
+  }
+
   circle {
     fill: transparent;
-    stroke: #2f3d4c;
+    stroke: $white;
     stroke-width: 10;
+    stroke-dasharray: 20;
+    stroke-dashoffset: 100;
+    animation: loader 1s ease-in alternate-reverse;
+    animation-iteration-count: infinite;
+  }
+}
+
+@keyframes loader {
+  to {
+    stroke-dasharray: 50;
+    stroke-dashoffset: 0;
   }
 }
