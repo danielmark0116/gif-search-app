@@ -1,10 +1,6 @@
 const giphyUrl = 'http://www.api.giphy.com/v1/gifs/random?api_key=';
 const giphyKey = 'Zrmd1zRa5KOTGx8EeGP50dxBQrVeIX0Z';
 
-// GIPHY_API_URL + '/v1/gifs/random?api_key=' + GIPHY_PUB_KEY + '&tag=' + searchingText;
-
-// api.giphy.com/v1/gifs/search?q=ryan+gosling&api_key=YOUR_API_KEY&limit=5
-
 const MyApp = React.createClass({
   getInitialState: function() {
     return {
