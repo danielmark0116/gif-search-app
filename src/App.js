@@ -1,6 +1,24 @@
 const giphyUrl = 'https://api.giphy.com/v1/gifs/random?api_key=';
 const giphyKey = 'Zrmd1zRa5KOTGx8EeGP50dxBQrVeIX0Z';
 
+function getGifs(sourceUrl) {
+  return new Promise(function(resolve, reject) {
+    const request = new XMLHttpRequest();
+    request.onload = function() {
+      if (this.status === 200) {
+        resolve(this.response);
+      } else {
+        reject(new Error(this.statusText));
+      }
+    };
+    request.onerror = function() {
+      reject(new Error(`XMLHttpRequest Error: ${this.statusText}`));
+    };
+    request.open('GET', sourceUrl);
+    request.send();
+  });
+}
+
 const MyApp = React.createClass({
   getInitialState: function() {
     return {
@@ -17,8 +35,8 @@ const MyApp = React.createClass({
   fetchGif: (inputValue, callback) => {
     const url = giphyUrl + giphyKey + '&tag=' + inputValue;
 
-    fetch(url)
-      .then(res => res.json())
+    getGifs(url)
+      .then(res => JSON.parse(res))
       .then(res => {
         let gifObject = {
           url: res.data.fixed_width_downsampled_url,
